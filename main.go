@@ -1,70 +1,19 @@
 package main
 
 import (
-	// "bytes"
-	// "encoding/json"
-	"fmt"
-	"io/ioutil"
-	// "net/url"
-	"net/http"
-	"strings"
-	// "path"
-	"./ja3transport"
+	"log"
+
+	"./ja3"
 )
 
-// JA3Response is the struct
-type JA3Response struct {
-	JA3Hash   string `json:"ja3_hash"`
-	JA3       string `json:"ja3"`
-	UserAgent string `json:"User-Agent"`
-}
-
 func main() {
+	testPayload := []byte{22, 3, 1, 0, 201, 1, 0, 0, 197, 3, 3, 82, 50, 235, 232, 231, 181, 243, 122, 13, 113, 213, 238, 184, 242, 230, 164, 189, 148, 5, 55, 17, 170, 189, 193, 212, 189, 211, 11, 239, 192, 39, 240, 0, 0, 36, 192, 48, 192, 44, 192, 47, 192, 43, 192, 20, 192, 10, 192, 19, 192, 9, 0, 159, 0, 158, 0, 57, 0, 51, 0, 157, 0, 156, 0, 53, 0, 47, 0, 10, 0, 255, 1, 0, 0, 120, 0, 0, 0, 18, 0, 16, 0, 0, 13, 119, 119, 119, 46, 103, 111, 111, 103, 108, 101, 46, 99, 104, 0, 11, 0, 4, 3, 0, 1, 2, 0, 10, 0, 28, 0, 26, 0, 23, 0, 25, 0, 28, 0, 27, 0, 24, 0, 26, 0, 22, 0, 14, 0, 13, 0, 11, 0, 12, 0, 9, 0, 10, 0, 35, 0, 0, 0, 13, 0, 32, 0, 30, 6, 1, 6, 2, 6, 3, 5, 1, 5, 2, 5, 3, 4, 1, 4, 2, 4, 3, 3, 1, 3, 2, 3, 3, 2, 1, 2, 2, 2, 3, 0, 5, 0, 5, 1, 0, 0, 0, 0, 0, 15, 0, 1, 1, 51, 116, 0, 0}
 
-	httpClient,err := ja3transport.New(ja3transport.SafariAuto)
-	if err != nil{
-		fmt.Println(err)
-		panic(err)
-	}
-
-	/* First fetch the JA3 Fingerprint */
-	rr, err := http.NewRequest("GET", "https://http2.pro/api/v1", strings.NewReader(""))
-    resp, err := httpClient.Do(rr)
-
-	body, err := ioutil.ReadAll(resp.Body)
+	ja3, err := ja3.ComputeJA3FromSegment(testPayload)
 	if err != nil {
-		fmt.Println(err)
-		panic(err)
+		log.Println("Expected: %v but got: %v\n",  err)
 	}
-	// // unmarshal the response
-	// var ja3Response JA3Response
-	// err = json.Unmarshal(body, &ja3Response)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
-	fmt.Println(string(body))
-	// /* Fetch information about the ja3hash*/
-	// searchURL, _ := url.Parse("https://ja3er.com/search/")
-	// searchURL.Path = path.Join(searchURL.Path, ja3Response.JA3Hash)
-
-	// resp, err = httpClient.Get(searchURL.String())
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
-
-	// body, err = ioutil.ReadAll(resp.Body)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
-
-	// var out bytes.Buffer
-	// err = json.Indent(&out, body, "", "\t")
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
-	// fmt.Println(out.String())
+	log.Println(ja3.GetJA3String())
+	log.Println(ja3.GetJA3Hash())
+	log.Println(ja3.GetSNI())
 }
