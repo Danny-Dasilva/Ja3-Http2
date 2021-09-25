@@ -8,11 +8,12 @@ package httptrace
 
 import (
 	"context"
-	"internal/nettrace"
 	"net"
 	"net/textproto"
 	"reflect"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/internal/nettrace"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 )
