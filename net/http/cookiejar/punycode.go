@@ -8,9 +8,10 @@ package cookiejar
 
 import (
 	"fmt"
-	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"strings"
 	"unicode/utf8"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii"
 )
 
 // These parameter values are specified in section 5.

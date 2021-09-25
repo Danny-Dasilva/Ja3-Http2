@@ -20,7 +20,6 @@ import (
 	"log"
 	"net"
 	"net/http/httptrace"
-	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/textproto"
 	"net/url"
 	"os"
@@ -29,6 +28,8 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 

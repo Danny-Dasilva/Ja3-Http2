@@ -12,12 +12,13 @@ import (
 	"io"
 	"log"
 	"net"
-	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/textproto"
 	"net/url"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 

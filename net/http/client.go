@@ -16,13 +16,14 @@ import (
 	"fmt"
 	"io"
 	"log"
-	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/url"
 	"reflect"
 	"sort"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 )

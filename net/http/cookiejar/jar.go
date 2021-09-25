@@ -9,12 +9,13 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/url"
 	"sort"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 )
