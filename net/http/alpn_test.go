@@ -7,11 +7,11 @@ package http_test
 import (
 	"bufio"
 	"bytes"
-	"crypto/tls"
 	"crypto/x509"
 	"fmt"
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
+	. "github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io"
-	. "net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"

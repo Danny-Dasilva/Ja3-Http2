@@ -5,10 +5,10 @@
 package tls_test
 
 import (
-	"crypto/tls"
 	"crypto/x509"
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"log"
-	"net/http"
 	"net/http/httptest"
 	"os"
 	"time"

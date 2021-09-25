@@ -5,9 +5,9 @@
 package http_test
 
 import (
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io/fs"
 	"log"
-	"net/http"
 	"strings"
 )
 

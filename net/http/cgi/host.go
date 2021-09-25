@@ -20,7 +20,6 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/http"
 	"net/textproto"
 	"os"
 	"os/exec"
@@ -29,6 +28,8 @@ import (
 	"runtime"
 	"strconv"
 	"strings"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 
 	"golang.org/x/net/http/httpguts"
 )

@@ -11,7 +11,6 @@ package http
 
 import (
 	"context"
-	"crypto/tls"
 	"encoding/base64"
 	"errors"
 	"fmt"
@@ -24,6 +23,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 )
 
 // A Client is an HTTP client. Its zero value (DefaultClient) is a

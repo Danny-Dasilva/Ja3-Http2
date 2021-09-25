@@ -7,9 +7,9 @@ package pprof
 import (
 	"bytes"
 	"fmt"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"internal/profile"
 	"io"
-	"net/http"
 	"net/http/httptest"
 	"runtime"
 	"runtime/pprof"

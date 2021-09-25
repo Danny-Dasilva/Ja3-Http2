@@ -1,8 +1,8 @@
 package main
 
 import (
-	"crypto/md5"
-	"encoding/hex"
+	// "crypto/md5"
+	// "encoding/hex"
 	"fmt"
 	"log"
 	"net"
@@ -22,6 +22,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	// hash := md5.Sum([]byte(r.JA3Fingerprint))
 	// log.Println(hash)
 	log.Println(r)
+	w.WriteHeader(200)
+	w.Write([]byte("error"))
 	// log.Println(r.JA3Fingerprint)
 	// hash := md5.Sum([]byte(r.JA3Fingerprint))
 	// log.Println(hash)

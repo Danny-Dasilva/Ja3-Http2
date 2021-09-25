@@ -7,9 +7,9 @@ package http_test
 import (
 	"context"
 	"fmt"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io"
 	"log"
-	"net/http"
 	"os"
 	"os/signal"
 )

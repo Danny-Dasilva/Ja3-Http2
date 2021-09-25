@@ -7,9 +7,9 @@ package http_test
 import (
 	"bytes"
 	"fmt"
+	. "github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io"
 	"log"
-	. "net/http"
 	"reflect"
 	"strconv"
 	"strings"

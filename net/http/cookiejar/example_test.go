@@ -6,8 +6,8 @@ package cookiejar_test
 
 import (
 	"fmt"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"log"
-	"net/http"
 	"net/http/cookiejar"
 	"net/http/httptest"
 	"net/url"

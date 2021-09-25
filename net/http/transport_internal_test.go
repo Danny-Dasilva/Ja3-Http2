@@ -8,8 +8,8 @@ package http
 
 import (
 	"bytes"
-	"crypto/tls"
 	"errors"
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 	"io"
 	"net"
 	"net/http/internal/testcert"

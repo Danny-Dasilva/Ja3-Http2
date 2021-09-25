@@ -16,6 +16,7 @@ import (
 	"fmt"
 	"hash"
 	"io"
+	"log"
 	"sync/atomic"
 	"time"
 )
@@ -44,7 +45,7 @@ func (c *Conn) serverHandshake(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-
+	log.Println(c.vers)
 	if c.vers == VersionTLS13 {
 		hs := serverHandshakeStateTLS13{
 			c:           c,

@@ -9,16 +9,18 @@ package cgi
 
 import (
 	"bufio"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
 	"net"
-	"net/http"
 	"net/url"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 )
 
 // Request returns the HTTP request as represented in the current

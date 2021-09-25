@@ -6,9 +6,9 @@ package httptest
 
 import (
 	"bufio"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io"
 	"net"
-	"net/http"
 	"testing"
 )
 

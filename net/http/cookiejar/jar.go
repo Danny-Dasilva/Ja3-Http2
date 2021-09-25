@@ -9,13 +9,14 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"net/http"
 	"net/http/internal/ascii"
 	"net/url"
 	"sort"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 )
 
 // PublicSuffixList provides the public suffix of a domain. For example:

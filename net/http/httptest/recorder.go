@@ -8,10 +8,11 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"net/http"
 	"net/textproto"
 	"strconv"
 	"strings"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 
 	"golang.org/x/net/http/httpguts"
 )

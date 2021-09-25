@@ -7,18 +7,20 @@
 package httptest
 
 import (
-	"crypto/tls"
 	"crypto/x509"
 	"flag"
 	"fmt"
 	"log"
 	"net"
-	"net/http"
 	"net/http/internal/testcert"
 	"os"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 )
 
 // A Server is an HTTP server listening on a system-chosen port on the

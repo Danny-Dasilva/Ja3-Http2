@@ -6,9 +6,9 @@ package httptest_test
 
 import (
 	"fmt"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io"
 	"log"
-	"net/http"
 	"net/http/httptest"
 )
 

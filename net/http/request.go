@@ -10,7 +10,6 @@ import (
 	"bufio"
 	"bytes"
 	"context"
-	"crypto/tls"
 	"encoding/base64"
 	"errors"
 	"fmt"
@@ -26,6 +25,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 
 	"golang.org/x/net/idna"
 )

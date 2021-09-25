@@ -6,7 +6,7 @@ package cookiejar
 
 import (
 	"fmt"
-	"net/http"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"net/url"
 	"sort"
 	"strings"

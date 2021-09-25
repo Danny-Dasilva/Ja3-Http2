@@ -9,7 +9,7 @@ package cgi
 import (
 	"bufio"
 	"bytes"
-	"net/http"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"

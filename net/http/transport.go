@@ -14,7 +14,6 @@ import (
 	"compress/gzip"
 	"container/list"
 	"context"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
@@ -30,6 +29,8 @@ import (
 	"sync"
 	"sync/atomic"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 
 	"golang.org/x/net/http/httpguts"
 	"golang.org/x/net/http/httpproxy"

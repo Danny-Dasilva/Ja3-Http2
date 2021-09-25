@@ -9,7 +9,6 @@ package http
 import (
 	"bufio"
 	"bytes"
-	"crypto/tls"
 	"errors"
 	"fmt"
 	"io"
@@ -17,6 +16,8 @@ import (
 	"net/url"
 	"strconv"
 	"strings"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 
 	"golang.org/x/net/http/httpguts"
 )

@@ -5,10 +5,11 @@ import (
 	"encoding/hex"
 	"fmt"
 	"net"
-	"net/http"
 	"net/http/httputil"
 	"net/url"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 
 	tls "github.com/refraction-networking/utls"
 	"golang.org/x/net/http2"

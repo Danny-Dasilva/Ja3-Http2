@@ -8,10 +8,12 @@ package httptest
 import (
 	"bufio"
 	"bytes"
-	"crypto/tls"
 	"io"
-	"net/http"
 	"strings"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 )
 
 // NewRequest returns a new incoming server Request, suitable

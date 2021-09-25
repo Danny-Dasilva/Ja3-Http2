@@ -6,8 +6,8 @@ package httptest
 
 import (
 	"fmt"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io"
-	"net/http"
 	"testing"
 )
 

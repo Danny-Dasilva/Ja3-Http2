@@ -8,12 +8,13 @@ package httptrace
 
 import (
 	"context"
-	"crypto/tls"
 	"internal/nettrace"
 	"net"
 	"net/textproto"
 	"reflect"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
 )
 
 // unique type to prevent assignment.

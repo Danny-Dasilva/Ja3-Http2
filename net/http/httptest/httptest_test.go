@@ -5,9 +5,9 @@
 package httptest
 
 import (
-	"crypto/tls"
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 	"io"
-	"net/http"
 	"net/url"
 	"reflect"
 	"strings"
