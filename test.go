@@ -1,71 +1,89 @@
 package main
 
 import (
-	// "bytes"
-	// "encoding/json"
+	"crypto/md5"
+	"encoding/hex"
 	"fmt"
-	"io/ioutil"
-	// "net/url"
-	// "path"
-	"./ja3transport"
+	"log"
+	"net"
+	// "strconv"
+
+	"github.com/Danny-Dasilva/Ja3Http2/ja3-server/crypto/tls"
+	"github.com/Danny-Dasilva/Ja3Http2/ja3-server/net/http"
 )
 
-// JA3Response is the struct
-type JA3Response struct {
-	JA3Hash   string `json:"ja3_hash"`
-	JA3       string `json:"ja3"`
-	UserAgent string `json:"User-Agent"`
+
+func handler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET")
+	// log.Println(r)
+	// log.Println(r.JA3Fingerprint)
+	// hash := md5.Sum([]byte(r.JA3Fingerprint))
+	// log.Println(hash)
+	log.Println(r)
+	// log.Println(r.JA3Fingerprint)
+	// hash := md5.Sum([]byte(r.JA3Fingerprint))
+	// log.Println(hash)
+
+	// out := make([]byte, 32)
+	// hex.Encode(out, hash[:])
+	// 	// Prevent results from being registered twice
+	// 	w.Header().Set("Cache-Control", "public,max-age=31556926,immutable")
+	// 	w.Header().Set("Expires", "Mon, 30 Dec 2019 08:00:00 GMT")
+	// 	w.Header().Set("Last-Modified", "Sun, 30 Dec 2018 08:00:00 GMT")
+	// 	w.WriteHeader(200)
+	// 	w.Write(out)
+
+	// 	_, err := client.HIncrBy("freqs", string(out), 1).Result()
+	// 	if err != nil {
+	// 		fmt.Println(err)
+	// 		return
+	// 	}
+	// 	_, err = client.HIncrBy("freqs", "total", 1).Result()
+	// 	if err != nil {
+	// 		fmt.Println(err)
+	// 		return
+	// 	}
+	// } else {
+	
+		// numF, err := strconv.ParseFloat(string(out), 64)
+		// if err != nil {
+		// 	fmt.Println(err)
+		// 	w.WriteHeader(200)
+		// 	w.Write([]byte("error"))
+		// 	return
+		// }
+	
+	// }
 }
 
 func main() {
+	
 
-	httpClient,err := ja3transport.NewWithString("771,4865-4867-4866-49195-49199-52393-52392-49196-49200-49162-49161-49171-49172-156-157-47-53-10,0-23-65281-10-11-35-16-5-51-43-13-45-28-21,29-23-24-25-256-257,0")
-	if err != nil{
-		fmt.Println(err)
-		panic(err)
-	}
+	
 
-	/* First fetch the JA3 Fingerprint */
-	resp, err := httpClient.Get("https://ja3er.com/json")
+	handler := http.HandlerFunc(handler)
+	server := &http.Server{Addr: ":8443", Handler: handler}
+
+	ln, err := net.Listen("tcp", ":8443")
 	if err != nil {
-		fmt.Println(err)
 		panic(err)
 	}
+	defer ln.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	cert, err := tls.LoadX509KeyPair("testdata/example-cert.pem", "testdata/example-key.pem")
 	if err != nil {
-		fmt.Println(err)
 		panic(err)
 	}
-	// // unmarshal the response
-	// var ja3Response JA3Response
-	// err = json.Unmarshal(body, &ja3Response)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
-	fmt.Println(string(body))
-	// /* Fetch information about the ja3hash*/
-	// searchURL, _ := url.Parse("https://ja3er.com/search/")
-	// searchURL.Path = path.Join(searchURL.Path, ja3Response.JA3Hash)
+	tlsConfig := tls.Config{Certificates: []tls.Certificate{cert}}
 
-	// resp, err = httpClient.Get(searchURL.String())
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
+	tlsListener := tls.NewListener(ln, &tlsConfig)
+	fmt.Println("HTTP up.")
+	err = server.Serve(tlsListener)
+	if err != nil {
+		panic(err)
+	}
 
-	// body, err = ioutil.ReadAll(resp.Body)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
-
-	// var out bytes.Buffer
-	// err = json.Indent(&out, body, "", "\t")
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	panic(err)
-	// }
-	// fmt.Println(out.String())
+	ln.Close()
 }
