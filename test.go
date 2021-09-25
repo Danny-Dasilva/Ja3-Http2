@@ -8,8 +8,8 @@ import (
 	"net"
 	// "strconv"
 
-	"github.com/Danny-Dasilva/Ja3Http2/ja3-server/crypto/tls"
-	"github.com/Danny-Dasilva/Ja3Http2/ja3-server/net/http"
+	"github.com/Danny-Dasilva/Ja3-Http2/crypto/tls"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
 )
 
 
