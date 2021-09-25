@@ -15,7 +15,7 @@ import (
 	"crypto/sha256"
 	"fmt"
 	"hash"
-	"internal/cpu"
+	"github.com/Danny-Dasilva/Ja3-Http2/internal/cpu"
 	"runtime"
 
 	"golang.org/x/crypto/chacha20poly1305"
