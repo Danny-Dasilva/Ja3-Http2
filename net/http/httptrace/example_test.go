@@ -7,8 +7,8 @@ package httptrace_test
 import (
 	"fmt"
 	"github.com/Danny-Dasilva/Ja3-Http2/net/http"
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/httptrace"
 	"log"
-	"net/http/httptrace"
 )
 
 func Example() {

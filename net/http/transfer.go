@@ -10,7 +10,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"net/http/httptrace"
 	"net/textproto"
 	"reflect"
 	"sort"
@@ -18,6 +17,8 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/httptrace"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal"
 

@@ -6,12 +6,13 @@ package http
 
 import (
 	"io"
-	"net/http/httptrace"
 	"net/textproto"
 	"sort"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/httptrace"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii"
 

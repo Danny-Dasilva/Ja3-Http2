@@ -17,13 +17,14 @@ import (
 	"mime"
 	"mime/multipart"
 	"net"
-	"net/http/httptrace"
 	"net/textproto"
 	"net/url"
 	urlpkg "net/url"
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/Danny-Dasilva/Ja3-Http2/net/http/httptrace"
 
 	"github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii"
 
