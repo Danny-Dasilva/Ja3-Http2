@@ -16,7 +16,7 @@ import (
 	"io"
 	"log"
 	"net/http/httptest"
-	"net/http/internal/ascii"
+	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/url"
 	"os"
 	"reflect"

@@ -8,7 +8,7 @@ package cookiejar
 
 import (
 	"fmt"
-	"net/http/internal/ascii"
+	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"strings"
 	"unicode/utf8"
 )

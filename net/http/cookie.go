@@ -7,7 +7,7 @@ package http
 import (
 	"log"
 	"net"
-	"net/http/internal/ascii"
+	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/textproto"
 	"strconv"
 	"strings"

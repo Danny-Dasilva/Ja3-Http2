@@ -9,7 +9,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
-	"net/http/internal/ascii"
+	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/url"
 	"sort"
 	"strings"

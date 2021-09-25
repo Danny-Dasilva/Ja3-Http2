@@ -18,7 +18,7 @@ import (
 	"mime/multipart"
 	"net"
 	"net/http/httptrace"
-	"net/http/internal/ascii"
+	""github.com/Danny-Dasilva/Ja3-Http2/net/http/internal/ascii""
 	"net/textproto"
 	"net/url"
 	urlpkg "net/url"
