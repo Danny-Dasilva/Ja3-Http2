@@ -22,35 +22,35 @@ var ctx = context.TODO()
 
 // var client *mongo.Client
 
-// func init() {
-// 	err := c.LoadFromFile()
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	clientOptions := options.Client().ApplyURI(c.MongoURL)
-// 	client, err = mongo.Connect(ctx, clientOptions)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
+func init() {
+	err := c.LoadFromFile()
+	if err != nil {
+		log.Fatal(err)
+	}
+	// clientOptions := options.Client().ApplyURI(c.MongoURL)
+	// client, err = mongo.Connect(ctx, clientOptions)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-// 	err = client.Ping(ctx, nil)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
+	// err = client.Ping(ctx, nil)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
-// 	collection = client.Database("TrackMe").Collection("requests")
+	// collection = client.Database("TrackMe").Collection("requests")
 
-// 	_, err = collection.Indexes().CreateOne(
-// 		context.Background(),
-// 		mongo.IndexModel{
-// 			Keys:    bson.D{{Key: "hash", Value: 1}},
-// 			Options: options.Index().SetUnique(true),
-// 		})
-// 	if err != nil {
-// 		log.Println(err)
-// 	}
+	// _, err = collection.Indexes().CreateOne(
+	// 	context.Background(),
+	// 	mongo.IndexModel{
+	// 		Keys:    bson.D{{Key: "hash", Value: 1}},
+	// 		Options: options.Index().SetUnique(true),
+	// 	})
+	// if err != nil {
+	// 	log.Println(err)
+	// }
 
-// }
+}
 
 func StartRedirectServer(host, port string) {
 	log.Println("Starting Redirect Server")
@@ -80,7 +80,7 @@ func StartRedirectServer(host, port string) {
 func main() {
 	log.Println("Starting server...")
 	log.Println("Listening on " + c.Host + ":" + c.TLSPort)
-
+	log.Println(c.CertFile, c.KeyFile)
 	// Load the TLS certificates
 	var err error
 	cert, err = tls.LoadX509KeyPair(c.CertFile, c.KeyFile)
