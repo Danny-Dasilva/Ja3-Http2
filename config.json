@@ -1,0 +1,9 @@
+{
+  "log_to_db": true,
+  "tls_port": "443",
+  "http_port": "80",
+  "cert_file": "certs/chain.pem",
+  "key_file": "certs/key.pem",
+  "host": "",
+  "mongoURL": ""
+}
