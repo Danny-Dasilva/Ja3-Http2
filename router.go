@@ -9,9 +9,9 @@ func Router(path string, res Response) ([]byte, string) {
 	if GetUserAgent(res) == "" {
 		return []byte("no useragent"), "text/html"
 	}
-	if c.LogToDB && res.Path != "/favicon.ico" {
-		SaveRequest(res)
-	}
+	// if c.LogToDB && res.Path != "/favicon.ico" {
+	// 	SaveRequest(res)
+	// }
 	switch path {
 	case "/api/all":
 		return []byte(res.ToJson()), "application/json"

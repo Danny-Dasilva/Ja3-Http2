@@ -8,48 +8,49 @@ import (
 	// tls "github.com/wwhtrbbtt/crypto-tls"
 
 	"github.com/honeytrap/honeytrap/services/ja3/crypto/tls"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
+	// "go.mongodb.org/mongo-driver/bson"
+	// "go.mongodb.org/mongo-driver/mongo"
+	// "go.mongodb.org/mongo-driver/mongo/options"
 )
 
 var Gja3 JA3Calculating
 var cert tls.Certificate
 var c *Config = &Config{}
 
-var collection *mongo.Collection
 var ctx = context.TODO()
-var client *mongo.Client
+// var collection *mongo.Collection
 
-func init() {
-	err := c.LoadFromFile()
-	if err != nil {
-		log.Fatal(err)
-	}
-	clientOptions := options.Client().ApplyURI(c.MongoURL)
-	client, err = mongo.Connect(ctx, clientOptions)
-	if err != nil {
-		log.Fatal(err)
-	}
+// var client *mongo.Client
 
-	err = client.Ping(ctx, nil)
-	if err != nil {
-		log.Fatal(err)
-	}
+// func init() {
+// 	err := c.LoadFromFile()
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	clientOptions := options.Client().ApplyURI(c.MongoURL)
+// 	client, err = mongo.Connect(ctx, clientOptions)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
 
-	collection = client.Database("TrackMe").Collection("requests")
+// 	err = client.Ping(ctx, nil)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
 
-	_, err = collection.Indexes().CreateOne(
-		context.Background(),
-		mongo.IndexModel{
-			Keys:    bson.D{{Key: "hash", Value: 1}},
-			Options: options.Index().SetUnique(true),
-		})
-	if err != nil {
-		log.Println(err)
-	}
+// 	collection = client.Database("TrackMe").Collection("requests")
 
-}
+// 	_, err = collection.Indexes().CreateOne(
+// 		context.Background(),
+// 		mongo.IndexModel{
+// 			Keys:    bson.D{{Key: "hash", Value: 1}},
+// 			Options: options.Index().SetUnique(true),
+// 		})
+// 	if err != nil {
+// 		log.Println(err)
+// 	}
+
+// }
 
 func StartRedirectServer(host, port string) {
 	log.Println("Starting Redirect Server")
