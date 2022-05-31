@@ -46,9 +46,9 @@ func init() {
 	// 		Keys:    bson.D{{Key: "hash", Value: 1}},
 	// 		Options: options.Index().SetUnique(true),
 	// 	})
-	// if err != nil {
-	// 	log.Println(err)
-	// }
+	if err != nil {
+		log.Println(err)
+	}
 
 }
 

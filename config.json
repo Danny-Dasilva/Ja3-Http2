@@ -1,7 +1,7 @@
 {
-  "log_to_db": true,
+  "log_to_db": false,
   "tls_port": "443",
-  "http_port": "8080",
+  "http_port": "8000",
   "cert_file": "certs/chain.pem",
   "key_file": "certs/key.pem",
   "host": "",
