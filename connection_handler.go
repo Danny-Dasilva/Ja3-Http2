@@ -228,7 +228,7 @@ func handleHTTP2(conn net.Conn) {
 	hbuf := bytes.NewBuffer([]byte{})
 	encoder := hpack.NewEncoder(hbuf)
 	encoder.WriteField(hpack.HeaderField{Name: ":status", Value: "200"})
-	encoder.WriteField(hpack.HeaderField{Name: "server", Value: "TrackMe.peet.ws"})
+	encoder.WriteField(hpack.HeaderField{Name: "server", Value: "localhost-server"})
 	encoder.WriteField(hpack.HeaderField{Name: "content-length", Value: strconv.Itoa(len(res))})
 	encoder.WriteField(hpack.HeaderField{Name: "content-type", Value: ctype})
 

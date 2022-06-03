@@ -71,7 +71,7 @@ func StartRedirectServer(host, port string) {
 			log.Println("Error accepting connection", err)
 		}
 		go func() {
-			conn.Write([]byte("HTTP/1.1 301 Moved Permanently\r\nLocation: https://tls.peet.ws\r\n\r\n"))
+			conn.Write([]byte("HTTP/1.1 301 Moved Permanently\r\nLocation: https://localhost-server\r\n\r\n"))
 			conn.Close()
 		}()
 	}
